@@ -1,0 +1,3 @@
+export const SOME_MUTATION = 'SOME_MUTATION';
+export const PROMISE_ADD_ONE='PROMISE_ADD_ONE';
+export const PROMISE_ADD_TWO='PROMISE_ADD_TWO'
