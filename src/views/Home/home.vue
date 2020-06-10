@@ -23,7 +23,7 @@ export default {
         },
         {
           title:"路由",
-          url:"myRouter"
+          url:""
         },
         {
           title:"过渡&动画",
@@ -38,7 +38,7 @@ export default {
           url:"myVuex"
         },
         {
-          title:"深度作用选择器",
+          title:"深度作用选择器（样式穿透）",
           url:"myDeep"
         },
         {
@@ -48,6 +48,22 @@ export default {
         {
           title:"API",
           url:"myApi"
+        },
+        {
+          title:"函数式组件",
+          url:"componentOfFunction"
+        },
+        {
+          title:"watch高阶组件",
+          url:"myWatch"
+        },
+        {
+          title:"事件参数$event",
+          url:"myEvent"
+        },
+        {
+          title:"自定义组件双向绑定",
+          url:"myModel"
         }
       ]
     };
