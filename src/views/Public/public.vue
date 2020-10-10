@@ -31,7 +31,10 @@ export default {
     componentOfFunction: () => import("@/components/component-function"),
     myWatch: () => import("@/components/watch"),
     myEvent:()=>import("@/components/$event"),
-    myModel:()=>import("@/components/my-model")
+    myModel:()=>import("@/components/my-model"),
+    myCustomComponent:()=>import("@/components/custom-component"),
+    myVuexRefresh:()=>import("@/components/vuex/refresh")
+
   },
   data() {
     return {

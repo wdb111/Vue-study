@@ -64,6 +64,14 @@ export default {
         {
           title:"自定义组件双向绑定",
           url:"myModel"
+        },
+        {
+          title:"自定义组件数据更新",
+          url:"myCustomComponent"
+        },
+        {
+          title:"vuex刷新",
+          url:"myVuexRefresh"
         }
       ]
     };

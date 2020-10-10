@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex'; //引入 vuex
 import * as types from './mutation-types';
+import vuexAlong from "vuex-along";
 // import user from './user'
 // import public from './public'
 
@@ -16,7 +17,7 @@ export default new Vuex.Store({
     state: {
         // 初始化状态
         count: 0,
-        count1:0,
+        count1: 0,
         todos: [{
                 id: 1,
                 text: '...',
@@ -41,10 +42,10 @@ export default new Vuex.Store({
             state.count += payload || 1;
         },
         [types.PROMISE_ADD_ONE](state, payload) {
-            state.count +=1
+            state.count += 1
         },
         [types.PROMISE_ADD_TWO](state, payload) {
-            state.count1 +=1
+            state.count1 += 1
         }
     },
     //异步
@@ -86,5 +87,6 @@ export default new Vuex.Store({
                 })
             }
         }
-    }
+    },
+    plugins: [vuexAlong()]
 })
