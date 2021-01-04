@@ -12,11 +12,9 @@
 <template>
   <div>
     <p>我是子组件==========</p>
-    <div>父组件数据：{{num}}</div>
-    <div>
-      <el-button @click="changeParent">父组件数+2</el-button>
-    </div>
-    <div>子组件数据：{{childMsg}}</div>
+    <p>父组件数据：{{num}}</p>
+    <p>子组件数据：{{childMsg}}</p>
+    <el-button @click="changeParent">父组件数+2</el-button>
     <hr />
     <p>插槽===========</p>
     <slot>插槽默认内容</slot>
@@ -25,6 +23,7 @@
     <slot name="header" v-bind:user="user">{{user.name}}</slot>
     插槽2：
     <slot name="body" :user="user">插槽默认内容</slot>
+    <slot name="body1" :user="user">插槽默认内容</slot>
     插槽3：
     <slot name="footer">插槽默认内容</slot>
   </div>

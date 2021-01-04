@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex'; //引入 vuex
 import * as types from './mutation-types';
 import vuexAlong from "vuex-along";
+import createVuexAlong from "vuex-along";
 // import user from './user'
 // import public from './public'
 
@@ -13,6 +14,12 @@ Vue.use(Vuex); //使用 vuex
 //       public
 //     }
 //   })
+const moduleA = {
+    state: {
+        a1: "hello",
+        a2: "world",
+    },
+};
 export default new Vuex.Store({
     state: {
         // 初始化状态
@@ -28,7 +35,9 @@ export default new Vuex.Store({
                 text: '...',
                 done: false
             }
-        ]
+        ],
+        permission:false,
+        pageName:'myComponent'
     },
     getters: {
         doneTodos: state => {
@@ -46,6 +55,12 @@ export default new Vuex.Store({
         },
         [types.PROMISE_ADD_TWO](state, payload) {
             state.count1 += 1
+        },
+        [types.PERMISSION](state){
+            state.permission=!state.permission;
+        },
+        [types.PAGENAME](state,param){
+            state.pageName=param;
         }
     },
     //异步
@@ -88,5 +103,24 @@ export default new Vuex.Store({
             }
         }
     },
-    plugins: [vuexAlong()]
+    modules: {
+        ma: moduleA,
+    },
+    plugins: [vuexAlong()],
+    // plugins: [
+    //     createVuexAlong({
+    //       // 设置保存的集合名字，避免同站点下的多项目数据冲突
+    //       name: "hello-vuex-along",
+    //       local: {
+    //         list: ["ma"],
+    //         // 过滤模块 ma 数据， 将其他的存入 localStorage
+    //         // isFilter: true,
+    //       },
+    //       session: {
+    //         // 保存模块 ma 中的 a1 到 sessionStorage
+    //         list: ["ma.a1"],
+    //         isFilter: true,
+    //       },
+    //     }),
+    //   ],
 })

@@ -1,20 +1,36 @@
 <template>
   <div class="parent">
-    <p>我是父亲, 对儿子说： {{sthGiveChild}}</p>
-    <Child v-model="sthGiveChild"></Child>
+    <h3>自定义组件v-model</h3>
+    <p>{{sthGiveChild}}</p>
+    <!-- @input="handInput" -->
+    <my-input v-model="sthGiveChild" ></my-input>
+    <br>
+    <p>{{checkedValue}}</p>
+     <!-- @change="handChange" -->
+    <my-checkbox v-model="checkedValue"></my-checkbox>
   </div>
 </template>
 <script>
-import Child from "./child.vue";
+import MyInput from "./input.vue";
 export default {
   data() {
     return {
-      sthGiveChild: "给你100块"
+      sthGiveChild: '请输入...',
+      checkedValue:false
     };
   },
   components: {
-    Child
+    MyInput,
+    MyCheckbox:()=>import('./checkbox.vue')
   },
-  methods: {}
+  methods: {
+    handInput(val){
+      console.log(val)
+      // this.sthGiveChild=val;
+    },
+    handChange(val){
+      console.log(val)
+    }
+  }
 };
 </script>

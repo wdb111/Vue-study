@@ -7,6 +7,7 @@
 <template>
     <div>
         <h3>解决自定义组件切换时数据不更新问题</h3>
+        <p>给组件绑定不同的key值</p>
         <el-tabs v-model="activeName">
             <el-tab-pane label="用户管理" name="first">
                 <my-child key="xiaoming" :parentData="parentData1"></my-child>

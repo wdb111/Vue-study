@@ -4,14 +4,15 @@
   email: 1303329454@qq.com
   time: 2020年04月24日 17:49:10
   version: v1.0
-  Modification record: 
-  Modification: 
-  Modified by: 
-  Modification time: 
+  Modification record:
+  Modification:
+  Modified by:
+  Modification time:
 -->
 <template>
   <div class="public-box">
     <h3>{{$route.params.title}}</h3>
+    <p>{{msg}}</p>
     <!-- 动态组件 -->
     <component :is="$route.params.title"></component>
   </div>
@@ -33,19 +34,20 @@ export default {
     myEvent:()=>import("@/components/$event"),
     myModel:()=>import("@/components/my-model"),
     myCustomComponent:()=>import("@/components/custom-component"),
-    myVuexRefresh:()=>import("@/components/vuex/refresh")
+    customComponents:()=>import("@/components/custom-component/btn.vue"),
+    myFilters:()=>import('@/components/filters')
 
   },
   data() {
     return {
-      msg: "我是公共组件的父实例"
+      msg: "我在公共组件的父实例中"
     };
   },
   computed: {},
   methods: {},
   created() {}
 };
-</script> 
+</script>
 
 <style scoped>
 /* 深度作用选择器：两种方式 */

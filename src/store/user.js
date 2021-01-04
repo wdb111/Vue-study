@@ -1,6 +1,11 @@
 // 用户信息
-const public = {
+const user = {
     state: {
+        token:'ashjsdhjsdfjk',
+        permission:true,
+        userInfo:{
+            name:''
+        }
     },
     getters: {
     },
@@ -12,4 +17,4 @@ const public = {
 
     }
 }
-export default public;
+export default user;

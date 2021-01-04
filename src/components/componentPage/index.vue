@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
-    <h1>组件页面</h1>
-    <p>我是父组件==================>>>>>>>></p>
+    <hr>
+    <p>我是父组件=======</p>
     <div>
       <div>父组件内容：{{msg}}</div>
-      <el-button @click="addChild">子组件数+1</el-button>
+      <br>
+      <el-button @click="addChild">子组件值+1</el-button>
     </div>
     <hr />
     <Child ref="childref" :num="msg" @parentEvent="changeMsg">
@@ -20,7 +21,7 @@
           {{user.name}}
         </div>
       </template>
-      <template #body="{noData={a:123}}">
+      <template #body1="{noData={a:123}}">
         <div>
           <strong>默认值：</strong>
           {{noData.a}}
