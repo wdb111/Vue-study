@@ -15,8 +15,8 @@ const router = new Router({
             {
                 path: '/router/:title',
                 name: 'Router',
-                component: () => import('@/views/Public/public')
-                // component:resolve => require(['@/views/Public/public'], resolve)
+                component: () => import('@/views/Public/public')//按需加载路由（异步）（webpack > 2.4 时）
+                // component:resolve => require(['@/views/Public/public'], resolve)//按需加载路由（webpack < 2.4 时）
 
             },
             {

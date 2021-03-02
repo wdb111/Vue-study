@@ -56,6 +56,10 @@ export default {
                             title: "自定义组件数据更新",
                             url: "myCustomComponent",
                         },
+                        {
+                            title: "组件之间的通信",
+                            url: "componentCom",
+                        },
                     ],
                 },
                 {
